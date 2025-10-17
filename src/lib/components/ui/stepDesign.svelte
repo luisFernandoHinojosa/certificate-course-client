@@ -48,6 +48,8 @@
 	}
 
 	function handleNext() {
+		console.log('config: ', config);
+
 		dispatch('next');
 	}
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	//stepData.svelte
 	import type { ExcelData } from '$lib/interfaces/createTemplatee.interface';
 	import { createEventDispatcher } from 'svelte';
 	import * as XLSX from 'xlsx';
@@ -9,8 +10,8 @@
 
 	const dispatch = createEventDispatcher();
 
-	function handleExcelUpload(e: Event) {
-		const target = e.target as HTMLInputElement;
+	function handleExcelUpload(e: CustomEvent<EventTarget>) {
+		const target = e.detail as HTMLInputElement;
 		const file = target.files?.[0];
 		if (!file) return;
 
